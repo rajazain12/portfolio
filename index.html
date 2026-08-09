@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="description" content="Zain Tanveer — Full-stack and machine learning developer specializing in computer vision, NLP, and cross-platform mobile development.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230F1620'/%3E%3Crect x='2' y='2' width='60' height='60' fill='none' stroke='%23E8A33D' stroke-width='2'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='26' font-weight='700' fill='%23E8A33D' text-anchor='middle'%3EZT%3C/text%3E%3C/svg%3E">
+<title>Zain Tanveer — Full-Stack &amp; Machine Learning Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0F1620;
+    --ink-2:#161F2C;
+    --ink-3:#1D2A3A;
+    --paper:#ECEFF3;
+    --muted:#8A93A3;
+    --amber:#E8A33D;
+    --teal:#4FA69B;
+    --line: rgba(236,239,243,0.14);
+    --line-soft: rgba(236,239,243,0.07);
+    --radius: 2px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--amber); color:var(--ink);}
+  a{color:inherit; text-decoration:none;}
+
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  .display{font-family:'Space Grotesk', sans-serif;}
+
+  .wrap{max-width:1080px; margin:0 auto; padding:0 32px;}
+
+  /* ---------- corner-bracket / detection-frame motif ---------- */
+  .frame{position:relative;}
+  .frame::before, .frame::after,
+  .frame .tick-br, .frame .tick-bl{
+    content:""; position:absolute; width:18px; height:18px;
+    border-color:var(--amber); opacity:0.85; pointer-events:none;
+  }
+  .frame::before{top:-1px; left:-1px; border-top:2px solid var(--amber); border-left:2px solid var(--amber);}
+  .frame::after{top:-1px; right:-1px; border-top:2px solid var(--amber); border-right:2px solid var(--amber);}
+  .frame .tick-bl{bottom:-1px; left:-1px; border-bottom:2px solid var(--amber); border-left:2px solid var(--amber);}
+  .frame .tick-br{bottom:-1px; right:-1px; border-bottom:2px solid var(--amber); border-right:2px solid var(--amber);}
+  .frame{border:1px solid var(--line);}
+
+  .conf-tag{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--amber);
+  }
+  .conf-tag .dot{width:6px; height:6px; background:var(--amber); border-radius:50%; box-shadow:0 0 8px var(--amber);}
+
+  /* ---------- nav ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    backdrop-filter:blur(10px);
+    background:rgba(15,22,32,0.72);
+    border-bottom:1px solid var(--line-soft);
+  }
+  nav{display:flex; align-items:center; justify-content:space-between; padding:18px 32px; max-width:1080px; margin:0 auto;}
+  .logo{font-family:'IBM Plex Mono', monospace; font-size:14px; letter-spacing:0.02em;}
+  .logo span{color:var(--amber);}
+  .navlinks{display:flex; gap:32px; font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.06em; text-transform:uppercase;}
+  .navlinks a{color:var(--muted); transition:color .2s ease; position:relative;}
+  .navlinks a:hover{color:var(--paper);}
+  .navlinks a:focus-visible, a:focus-visible, button:focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
+
+  /* ---------- hero ---------- */
+  .hero{padding:110px 0 100px; position:relative;}
+  .hero-grid{
+    position:absolute; inset:0; z-index:-1;
+    background-image:
+      linear-gradient(var(--line-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size:56px 56px;
+    mask-image:radial-gradient(ellipse 70% 60% at 50% 30%, black 40%, transparent 90%);
+  }
+  .eyebrow{margin-bottom:28px;}
+  .hero h1{
+    font-size:clamp(42px, 7vw, 84px);
+    line-height:0.98;
+    font-weight:700;
+    letter-spacing:-0.02em;
+  }
+  .hero-sub{
+    margin-top:22px; max-width:560px; color:var(--muted); font-size:17px;
+  }
+  .role-box{
+    display:inline-block; margin-top:36px; padding:18px 22px 16px;
+    position:relative;
+  }
+  .role-box .role-title{font-family:'IBM Plex Mono', monospace; font-size:14px; color:var(--paper); letter-spacing:0.02em;}
+  .role-box .role-meta{margin-top:6px; font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--teal);}
+
+  .hero-links{display:flex; gap:14px; margin-top:44px; flex-wrap:wrap;}
+  .btn{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.05em; text-transform:uppercase;
+    padding:13px 22px; border:1px solid var(--line); transition:all .2s ease; display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn:hover{border-color:var(--amber); color:var(--amber);}
+  .btn.primary{background:var(--amber); color:var(--ink); border-color:var(--amber); font-weight:600;}
+  .btn.primary:hover{background:transparent; color:var(--amber);}
+
+  /* ---------- section shell ---------- */
+  section{padding:96px 0; border-top:1px solid var(--line-soft);}
+  .section-head{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:52px; gap:24px; flex-wrap:wrap;}
+  .section-num{font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--muted);}
+  .section-title{font-family:'Space Grotesk', sans-serif; font-size:clamp(26px,3.4vw,36px); font-weight:600; margin-top:6px;}
+
+  /* ---------- about ---------- */
+  .about-grid{display:grid; grid-template-columns:1fr 1.4fr; gap:64px;}
+  .about-label{font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--teal); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:14px;}
+  .about-body p{color:var(--muted); font-size:16px; max-width:60ch;}
+  .about-body p + p{margin-top:16px;}
+  .about-body strong{color:var(--paper); font-weight:600;}
+
+  /* ---------- skills ---------- */
+  .skill-groups{display:grid; grid-template-columns:repeat(3,1fr); gap:32px;}
+  .skill-group h3{font-family:'IBM Plex Mono', monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted); margin-bottom:16px;}
+  .tag-list{display:flex; flex-wrap:wrap; gap:8px;}
+  .tag{
+    font-family:'IBM Plex Mono', monospace; font-size:12.5px;
+    padding:7px 12px; border:1px solid var(--line); color:var(--paper);
+    background:var(--ink-2); transition:border-color .2s ease, color .2s ease;
+  }
+  .tag:hover{border-color:var(--amber); color:var(--amber);}
+
+  /* ---------- projects ---------- */
+  .project{
+    position:relative; padding:36px; margin-bottom:28px; background:var(--ink-2);
+  }
+  .project-top{display:flex; justify-content:space-between; align-items:flex-start; gap:24px; flex-wrap:wrap; margin-bottom:8px;}
+  .project-title{font-family:'Space Grotesk', sans-serif; font-size:24px; font-weight:600;}
+  .project-kind{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; margin-top:6px;}
+  .metric{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--ink); background:var(--teal);
+    padding:6px 10px; white-space:nowrap; align-self:flex-start;
+  }
+  .project ul{margin-top:18px; padding-left:0; list-style:none;}
+  .project li{position:relative; padding-left:20px; color:var(--muted); font-size:15px; margin-bottom:10px;}
+  .project li::before{content:"›"; position:absolute; left:0; color:var(--amber); font-family:'IBM Plex Mono', monospace;}
+  .project-stack{display:flex; gap:8px; flex-wrap:wrap; margin-top:22px;}
+  .chip{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--teal); border:1px solid rgba(79,166,155,0.35); padding:5px 10px;}
+
+  /* ---------- education / timeline ---------- */
+  .edu-row{display:flex; justify-content:space-between; align-items:baseline; padding:22px 0; border-bottom:1px solid var(--line-soft); flex-wrap:wrap; gap:8px;}
+  .edu-row:last-child{border-bottom:none;}
+  .edu-name{font-family:'Space Grotesk', sans-serif; font-size:19px; font-weight:600;}
+  .edu-degree{color:var(--muted); font-size:14px; margin-top:4px;}
+  .edu-date{font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--amber);}
+
+  /* ---------- contact / footer ---------- */
+  .contact{text-align:center;}
+  .contact .section-title{font-size:clamp(30px,5vw,52px);}
+  .contact-sub{color:var(--muted); max-width:480px; margin:18px auto 40px; font-size:16px;}
+  .contact-links{display:flex; justify-content:center; gap:16px; flex-wrap:wrap;}
+  .contact-links span.btn{cursor:default; pointer-events:none;}
+
+  footer{padding:32px; border-top:1px solid var(--line-soft); text-align:center;}
+  footer p{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--muted); letter-spacing:0.04em;}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 860px){
+    .about-grid{grid-template-columns:1fr; gap:32px;}
+    .skill-groups{grid-template-columns:1fr; gap:28px;}
+    .navlinks{display:none;}
+  }
+  @media (max-width: 540px){
+    .wrap{padding:0 20px;}
+    .hero{padding:80px 0 70px;}
+    section{padding:64px 0;}
+    .project{padding:24px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">ZAIN TANVEER</div>
+    <div class="navlinks">
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="wrap">
+    <h1 class="display">Zain<br>Tanveer</h1>
+    <p class="hero-sub">Full-stack and machine learning developer specializing in computer vision, NLP, and cross-platform mobile development — comfortable owning the full lifecycle, from database design to production AI integration.</p>
+
+    <div class="role-box frame">
+      <span class="tick-bl"></span><span class="tick-br"></span>
+      <div class="role-title mono">role: full-stack / ml engineer</div>
+      <div class="role-meta">confidence: 99.2% · class: builder</div>
+    </div>
+
+    <div class="hero-links">
+      <a class="btn primary" href="#work" id="view-work-btn">View Work</a>
+      <a class="btn" href="https://github.com/rajazain12/zaintanveer" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://linkedin.com/in/zain-tanveer-ai" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid reveal">
+    <div>
+      <div class="about-label">// about</div>
+      <div class="section-title display">Summary</div>
+    </div>
+    <div class="about-body">
+      <p><strong>Full-stack and machine learning developer</strong> specializing in computer vision, NLP, and cross-platform mobile development. Experienced in architecting secure, user-centric applications and optimizing neural networks for real-time inference.</p>
+      <p>Comfortable owning the full software lifecycle — from database design to production AI integration — with a background in <strong>React</strong>, <strong>React Native</strong>, <strong>Python</strong>, and applied deep learning.</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap reveal">
+    <div class="section-head">
+      <div>
+        <div class="section-num mono">// 01</div>
+        <div class="section-title display">Detected Skills</div>
+      </div>
+    </div>
+    <div class="skill-groups">
+      <div class="skill-group">
+        <h3>Languages &amp; Frameworks</h3>
+        <div class="tag-list">
+          <span class="tag">React</span>
+          <span class="tag">React Native</span>
+          <span class="tag">Python</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Redux</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>AI &amp; Data Science</h3>
+        <div class="tag-list">
+          <span class="tag">NLP</span>
+          <span class="tag">Computer Vision</span>
+          <span class="tag">Machine Learning</span>
+          <span class="tag">Neural Net Optimization</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Databases &amp; Tools</h3>
+        <div class="tag-list">
+          <span class="tag">MS SQL Server</span>
+          <span class="tag">Git / GitHub</span>
+          <span class="tag">Data Pipelines</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap reveal">
+    <div class="section-head">
+      <div>
+        <div class="section-num mono">// 02</div>
+        <div class="section-title display">Selected Work</div>
+      </div>
+    </div>
+
+    <div class="project frame">
+      <span class="tick-bl"></span><span class="tick-br"></span>
+      <div class="project-top">
+        <div>
+          <div class="project-title display">SubtitlePro</div>
+          <div class="project-kind">Adaptive Video Subtitling System · Final Year Project</div>
+        </div>
+        <div class="metric">Real-time NLP filtering</div>
+      </div>
+      <ul>
+        <li>Architected and developed a cross-platform mobile application in React Native, delivering a distraction-free, optimized video player experience.</li>
+        <li>Built a real-time NLP profanity-filtering engine with an auto-pause mechanism to detect and censor inappropriate content on the fly.</li>
+        <li>Integrated a backend using Python, FastAPI, Redux, and SQL Server to manage user configurations and keep data flowing seamlessly between client and server.</li>
+        <li>Designed a secure Parent Control Center with personalized, age-appropriate UX — including emoji-enhanced subtitles for children and advanced vocabulary support for teenagers.</li>
+      </ul>
+      <div class="project-stack">
+        <span class="chip">React Native</span>
+        <span class="chip">FastAPI</span>
+        <span class="chip">Redux</span>
+        <span class="chip">SQL Server</span>
+        <span class="chip">NLP</span>
+      </div>
+      <a class="btn" style="margin-top:22px;" href="https://github.com/rajazain12/SubtitlePro" target="_blank" rel="noopener">View Code ↗</a>
+    </div>
+
+    <div class="project frame">
+      <span class="tick-bl"></span><span class="tick-br"></span>
+      <div class="project-top">
+        <div>
+          <div class="project-title display">Ship Identification System</div>
+          <div class="project-kind">Machine Learning Project</div>
+        </div>
+        <div class="metric">~90% test accuracy</div>
+      </div>
+      <ul>
+        <li>Trained a deep learning image-classification model on a labeled dataset of ship images to identify a ship's name/class from a single photograph.</li>
+        <li>Built the data pipeline for image preprocessing, augmentation, and train/test splitting to improve generalization across varied angles and lighting.</li>
+        <li>Tuned model architecture and hyperparameters to improve classification accuracy and reduce inference time on unseen images.</li>
+        <li>Achieved approximately 90% classification accuracy on test data, evaluated using standard classification metrics.</li>
+      </ul>
+      <div class="project-stack">
+        <span class="chip">Computer Vision</span>
+        <span class="chip">Deep Learning</span>
+        <span class="chip">Data Augmentation</span>
+        <span class="chip">Model Tuning</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap reveal">
+    <div class="section-head">
+      <div>
+        <div class="section-num mono">// 03</div>
+        <div class="section-title display">Education</div>
+      </div>
+    </div>
+    <div class="edu-row">
+      <div>
+        <div class="edu-name display">PMAS Arid Agriculture University, Rawalpindi</div>
+        <div class="edu-degree">Bachelor of Science in Computer Science</div>
+      </div>
+      <div class="edu-date">Graduated 2026</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact reveal">
+    <div class="section-num mono">// 04</div>
+    <div class="section-title display">Let's build something.</div>
+    <p class="contact-sub">Open to full-stack and machine learning roles. Contact details below, or connect on LinkedIn and GitHub.</p>
+    <div class="contact-links">
+      <span class="btn primary">zaintanveer1632@gmail.com</span>
+      <span class="btn">+92 327 5061822</span>
+      <a class="btn" href="https://github.com/rajazain12/zaintanveer" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn" href="https://linkedin.com/in/zain-tanveer-ai" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 ZAIN TANVEER — BUILT WITH REACT NATIVE, FASTAPI &amp; A LITTLE COMPUTER VISION</p>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+
+  // Robust "View Work" — explicit smooth scroll instead of relying only on the #hash anchor.
+  const viewWorkBtn = document.getElementById('view-work-btn');
+  if (viewWorkBtn) {
+    viewWorkBtn.addEventListener('click', (e) => {
+      const target = document.getElementById('work');
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.pushState(null, '', '#work');
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
