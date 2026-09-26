@@ -2,251 +2,260 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="format-detection" content="telephone=no, email=no, address=no">
-<meta name="description" content="Zain Tanveer — Full-Stack & Applied AI Engineer specializing in autonomous AI automation, LLM orchestration, and cross-platform development.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230F1620'/%3E%3Crect x='2' y='2' width='60' height='60' fill='none' stroke='%23E8A33D' stroke-width='2'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='26' font-weight='700' fill='%23E8A33D' text-anchor='middle'%3EZT%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Zain Tanveer — Full-Stack & Applied AI Engineer specializing in cross-platform development, applied NLP, and LLM-based automation.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%2314181C'/%3E%3Ctext x='32' y='42' font-family='Georgia, serif' font-size='26' font-weight='700' fill='%232F6F62' text-anchor='middle'%3EZT%3C/text%3E%3C/svg%3E">
 <title>Zain Tanveer — Full-Stack &amp; Applied AI Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#0F1620;
-    --ink-2:#161F2C;
-    --ink-3:#1D2A3A;
-    --paper:#ECEFF3;
-    --muted:#8A93A3;
-    --amber:#E8A33D;
-    --teal:#4FA69B;
-    --line: rgba(236,239,243,0.14);
-    --line-soft: rgba(236,239,243,0.07);
-    --radius: 2px;
+    color-scheme: light;
+    --paper:#F3F3EE;
+    --paper-raise:#FFFFFF;
+    --ink:#14181C;
+    --ink-soft:#4E565C;
+    --ink-faint:#848C90;
+    --line: rgba(20,24,28,0.13);
+    --line-soft: rgba(20,24,28,0.07);
+    --accent:#2F6F62;
+    --accent-ink:#F3F3EE;
+    --warm:#A9722F;
   }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme: dark;
+      --paper:#15181B;
+      --paper-raise:#1B1F23;
+      --ink:#EDEEEA;
+      --ink-soft:#AEB4B2;
+      --ink-faint:#7B8280;
+      --line: rgba(237,238,234,0.14);
+      --line-soft: rgba(237,238,234,0.07);
+      --accent:#6FBBA9;
+      --accent-ink:#0F1412;
+      --warm:#D79A5A;
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --paper:#15181B;
+    --paper-raise:#1B1F23;
+    --ink:#EDEEEA;
+    --ink-soft:#AEB4B2;
+    --ink-faint:#7B8280;
+    --line: rgba(237,238,234,0.14);
+    --line-soft: rgba(237,238,234,0.07);
+    --accent:#6FBBA9;
+    --accent-ink:#0F1412;
+    --warm:#D79A5A;
+  }
+
   *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth; scroll-padding-top: calc(64px + env(safe-area-inset-top,0px));}
   body{
-    background:var(--ink);
-    color:var(--paper);
-    font-family:'IBM Plex Sans', sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
+    padding-top: env(safe-area-inset-top,0px);
+    padding-bottom: env(safe-area-inset-bottom,0px);
   }
-  ::selection{background:var(--amber); color:var(--ink);}
   a{color:inherit; text-decoration:none;}
+  ::selection{background:var(--accent); color:var(--accent-ink);}
 
-  .mono{font-family:'IBM Plex Mono', monospace;}
-  .display{font-family:'Space Grotesk', sans-serif;}
-
-  .wrap{max-width:1080px; margin:0 auto; padding:0 32px;}
-
-  /* ---------- corner-bracket / detection-frame motif ---------- */
-  .frame{position:relative;}
-  .frame::before, .frame::after,
-  .frame .tick-br, .frame .tick-bl{
-    content:""; position:absolute; width:18px; height:18px;
-    border-color:var(--amber); opacity:0.85; pointer-events:none;
-  }
-  .frame::before{top:-1px; left:-1px; border-top:2px solid var(--amber); border-left:2px solid var(--amber);}
-  .frame::after{top:-1px; right:-1px; border-top:2px solid var(--amber); border-right:2px solid var(--amber);}
-  .frame .tick-bl{bottom:-1px; left:-1px; border-bottom:2px solid var(--amber); border-left:2px solid var(--amber);}
-  .frame .tick-br{bottom:-1px; right:-1px; border-bottom:2px solid var(--amber); border-right:2px solid var(--amber);}
-  .frame{border:1px solid var(--line);}
-
-  .conf-tag{
-    display:inline-flex; align-items:center; gap:8px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
-    color:var(--amber);
-  }
-  .conf-tag .dot{width:6px; height:6px; background:var(--amber); border-radius:50%; box-shadow:0 0 8px var(--amber);}
+  .display{font-family:'Fraunces', serif;}
+  .wrap{max-width:920px; margin:0 auto; padding:0 32px;}
 
   /* ---------- nav ---------- */
   header{
     position:sticky; top:0; z-index:50;
-    backdrop-filter:blur(10px);
-    background:rgba(15,22,32,0.72);
+    background:color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter:blur(8px);
     border-bottom:1px solid var(--line-soft);
+    padding-top: env(safe-area-inset-top,0px);
   }
-  nav{display:flex; align-items:center; justify-content:space-between; padding:18px 32px; max-width:1080px; margin:0 auto;}
-  .logo{font-family:'IBM Plex Mono', monospace; font-size:14px; letter-spacing:0.02em;}
-  .logo span{color:var(--amber);}
-  .navlinks{display:flex; gap:32px; font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.06em; text-transform:uppercase;}
-  .navlinks a{color:var(--muted); transition:color .2s ease; position:relative;}
-  .navlinks a:hover{color:var(--paper);}
-  .navlinks a:focus-visible, a:focus-visible, button:focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
+  nav{display:flex; align-items:center; justify-content:space-between; padding:18px 32px; max-width:920px; margin:0 auto;}
+  .logo{font-family:'Fraunces', serif; font-weight:600; font-size:17px;}
+  .navlinks{display:flex; gap:28px; font-size:14px;}
+  .navlinks a{color:var(--ink-soft); transition:color .2s ease;}
+  .navlinks a:hover{color:var(--ink);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
 
   /* ---------- hero ---------- */
-  .hero{padding:110px 0 100px; position:relative;}
-  .hero-grid{
-    position:absolute; inset:0; z-index:-1;
-    background-image:
-      linear-gradient(var(--line-soft) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
-    background-size:56px 56px;
-    mask-image:radial-gradient(ellipse 70% 60% at 50% 30%, black 40%, transparent 90%);
-  }
-  .eyebrow{margin-bottom:28px;}
+  .hero{padding:88px 0 84px;}
+  .hero-grid{display:grid; grid-template-columns:1.15fr 0.85fr; gap:48px; align-items:center;}
   .hero h1{
-    font-size:clamp(42px, 7vw, 84px);
-    line-height:0.98;
-    font-weight:700;
-    letter-spacing:-0.02em;
+    font-size:clamp(40px, 6.4vw, 64px);
+    line-height:1.02;
+    font-weight:600;
+    letter-spacing:-0.01em;
   }
-  .hero-sub{
-    margin-top:22px; max-width:580px; color:var(--muted); font-size:17px;
-  }
-  .role-box{
-    display:inline-block; margin-top:36px; padding:18px 22px 16px;
-    position:relative;
-  }
-  .role-box .role-title{font-family:'IBM Plex Mono', monospace; font-size:14px; color:var(--paper); letter-spacing:0.02em;}
-  .role-box .role-meta{margin-top:6px; font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--teal);}
-
-  .hero-links{display:flex; gap:14px; margin-top:44px; flex-wrap:wrap;}
+  .hero-role{margin-top:14px; font-size:17px; color:var(--ink-soft); max-width:46ch;}
+  .hero-links{display:flex; gap:10px; margin-top:34px; flex-wrap:wrap;}
   .btn{
-    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.05em; text-transform:uppercase;
-    padding:13px 22px; border:1px solid var(--line); transition:all .2s ease; display:inline-flex; align-items:center; gap:8px;
+    font-size:14px; font-weight:500;
+    padding:11px 20px; border:1px solid var(--line); border-radius:3px;
+    transition:border-color .2s ease, background .2s ease, color .2s ease;
+    display:inline-flex; align-items:center; gap:6px;
   }
-  .btn:hover{border-color:var(--amber); color:var(--amber);}
-  .btn.primary{background:var(--amber); color:var(--ink); border-color:var(--amber); font-weight:600;}
-  .btn.primary:hover{background:transparent; color:var(--amber);}
+  .btn:hover{border-color:var(--accent); color:var(--accent);}
+  .btn.primary{background:var(--ink); color:var(--paper); border-color:var(--ink);}
+  .btn.primary:hover{background:var(--accent); border-color:var(--accent); color:var(--accent-ink);}
+
+  .hero-diagram{display:flex; justify-content:center;}
+  .hero-diagram svg{width:100%; max-width:300px; height:auto;}
 
   /* ---------- section shell ---------- */
-  section{padding:96px 0; border-top:1px solid var(--line-soft);}
-  .section-head{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:52px; gap:24px; flex-wrap:wrap;}
-  .section-num{font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--muted);}
-  .section-title{font-family:'Space Grotesk', sans-serif; font-size:clamp(26px,3.4vw,36px); font-weight:600; margin-top:6px;}
+  section{padding:76px 0; border-top:1px solid var(--line-soft);}
+  .section-head{margin-bottom:40px;}
+  .section-title{font-size:clamp(24px,3vw,30px); font-weight:600;}
+  .section-kicker{font-size:13px; color:var(--ink-faint); margin-bottom:6px;}
 
   /* ---------- about ---------- */
-  .about-grid{display:grid; grid-template-columns:1fr 1.4fr; gap:64px;}
-  .about-label{font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--teal); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:14px;}
-  .about-body p{color:var(--muted); font-size:16px; max-width:60ch;}
+  .about-body{max-width:66ch;}
+  .about-body p{color:var(--ink-soft); font-size:16.5px;}
   .about-body p + p{margin-top:16px;}
-  .about-body strong{color:var(--paper); font-weight:600;}
+  .about-body strong{color:var(--ink); font-weight:600;}
 
   /* ---------- skills ---------- */
-  .skill-groups{display:grid; grid-template-columns:repeat(3,1fr); gap:32px;}
-  .skill-group h3{font-family:'IBM Plex Mono', monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted); margin-bottom:16px;}
+  .skill-groups{display:grid; grid-template-columns:repeat(3,1fr); gap:36px;}
+  .skill-group h3{font-size:13px; font-weight:600; color:var(--ink-faint); margin-bottom:14px;}
   .tag-list{display:flex; flex-wrap:wrap; gap:8px;}
   .tag{
-    font-family:'IBM Plex Mono', monospace; font-size:12.5px;
-    padding:7px 12px; border:1px solid var(--line); color:var(--paper);
-    background:var(--ink-2); transition:border-color .2s ease, color .2s ease;
+    font-size:13px;
+    padding:7px 12px; border:1px solid var(--line); border-radius:3px; color:var(--ink-soft);
+    background:var(--paper-raise);
+    transition:border-color .2s ease, color .2s ease;
   }
-  .tag:hover{border-color:var(--amber); color:var(--amber);}
+  .tag:hover{border-color:var(--accent); color:var(--accent);}
 
   /* ---------- projects ---------- */
-  .project{
-    position:relative; padding:36px; margin-bottom:28px; background:var(--ink-2);
+  .project{padding:32px 0; border-top:1px solid var(--line-soft);}
+  .project:first-child{border-top:none; padding-top:0;}
+  .project-top{display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap; margin-bottom:6px;}
+  .project-title{font-family:'Fraunces', serif; font-size:22px; font-weight:600;}
+  .status{
+    font-size:12px; color:var(--warm); border:1px solid currentColor; border-radius:3px;
+    padding:4px 9px; white-space:nowrap;
   }
-  .project-top{display:flex; justify-content:space-between; align-items:flex-start; gap:24px; flex-wrap:wrap; margin-bottom:8px;}
-  .project-title{font-family:'Space Grotesk', sans-serif; font-size:24px; font-weight:600;}
-  .project-kind{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; margin-top:6px;}
-  .metric{
-    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--ink); background:var(--teal);
-    padding:6px 10px; white-space:nowrap; align-self:flex-start;
-  }
-  .project ul{margin-top:18px; padding-left:0; list-style:none;}
-  .project li{position:relative; padding-left:20px; color:var(--muted); font-size:15px; margin-bottom:10px;}
-  .project li::before{content:"›"; position:absolute; left:0; color:var(--amber); font-family:'IBM Plex Mono', monospace;}
-  .project-stack{display:flex; gap:8px; flex-wrap:wrap; margin-top:22px;}
-  .chip{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--teal); border:1px solid rgba(79,166,155,0.35); padding:5px 10px;}
+  .project-desc{color:var(--ink-soft); font-size:15.5px; max-width:70ch; margin-top:10px;}
+  .project-desc + .project-desc{margin-top:8px;}
+  .project-meta{margin-top:16px; font-size:13.5px; color:var(--ink-faint);}
+  .project-meta a{color:var(--accent); border-bottom:1px solid transparent;}
+  .project-meta a:hover{border-bottom-color:var(--accent);}
+  .project-note{margin-top:10px; font-size:13px; color:var(--ink-faint); font-style:italic;}
 
   /* ---------- education / timeline ---------- */
-  .edu-row{display:flex; justify-content:space-between; align-items:baseline; padding:22px 0; border-bottom:1px solid var(--line-soft); flex-wrap:wrap; gap:8px;}
-  .edu-row:last-child{border-bottom:none;}
-  .edu-name{font-family:'Space Grotesk', sans-serif; font-size:19px; font-weight:600;}
-  .edu-degree{color:var(--muted); font-size:14px; margin-top:4px;}
-  .edu-date{font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--amber);}
+  .edu-row{display:flex; justify-content:space-between; align-items:baseline; padding:20px 0; border-top:1px solid var(--line-soft); flex-wrap:wrap; gap:8px;}
+  .edu-row:first-child{border-top:none; padding-top:0;}
+  .edu-name{font-family:'Fraunces', serif; font-size:18px; font-weight:600;}
+  .edu-degree{color:var(--ink-soft); font-size:14px; margin-top:4px;}
+  .edu-date{font-size:13px; color:var(--ink-faint); white-space:nowrap;}
 
-  /* ---------- contact / footer ---------- */
-  .contact{text-align:center;}
-  .contact .section-title{font-size:clamp(30px,5vw,52px);}
-  .contact-sub{color:var(--muted); max-width:480px; margin:18px auto 40px; font-size:16px;}
-  .contact-links{display:flex; justify-content:center; gap:16px; flex-wrap:wrap;}
+  /* ---------- contact ---------- */
+  .contact{text-align:left;}
+  .contact-inner{display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap;}
+  .contact-sub{color:var(--ink-soft); max-width:44ch; margin-top:12px; font-size:16px;}
+  .contact-links{display:flex; gap:10px; flex-wrap:wrap;}
 
-  footer{padding:32px; border-top:1px solid var(--line-soft); text-align:center;}
-  footer p{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--muted); letter-spacing:0.04em;}
+  footer{padding:28px 32px; border-top:1px solid var(--line-soft); text-align:center;}
+  footer p{font-size:12.5px; color:var(--ink-faint);}
 
-  /* ---------- reveal ---------- */
-  .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
-  .reveal.in{opacity:1; transform:translateY(0);}
-
-  @media (prefers-reduced-motion: reduce){
-    .reveal{opacity:1; transform:none; transition:none;}
-    html{scroll-behavior:auto;}
-  }
-
-  /* ---------- responsive ---------- */
-  @media (max-width: 860px){
-    .about-grid{grid-template-columns:1fr; gap:32px;}
-    .skill-groups{grid-template-columns:1fr; gap:28px;}
+  @media (max-width: 760px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-diagram{order:-1; max-width:220px; margin:0 auto;}
+    .skill-groups{grid-template-columns:1fr; gap:26px;}
     .navlinks{display:none;}
+    .contact-inner{flex-direction:column; align-items:flex-start;}
   }
-  @media (max-width: 540px){
+  @media (max-width: 480px){
     .wrap{padding:0 20px;}
-    .hero{padding:80px 0 70px;}
-    section{padding:64px 0;}
-    .project{padding:24px;}
+    nav{padding:16px 20px;}
+    .hero{padding:56px 0 56px;}
+    section{padding:56px 0;}
   }
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
 </style>
 </head>
 <body>
 
 <header>
   <nav>
-    <div class="logo">ZAIN TANVEER</div>
+    <div class="logo">Zain Tanveer</div>
     <div class="navlinks">
       <a href="#work">Work</a>
-      <a href="#certifications">Certifications</a>
       <a href="#skills">Skills</a>
-      <a href="#about">About</a>
+      <a href="#education">Education</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
 </header>
 
 <section class="hero">
-  <div class="hero-grid"></div>
-  <div class="wrap">
-    <h1 class="display">Zain<br>Tanveer</h1>
-    <p class="hero-sub">Full-Stack &amp; Applied AI Engineer specializing in autonomous AI automation, LLM agent orchestration, and cross-platform systems — comfortable owning the complete software lifecycle from secure backend infrastructure to low-latency voice and UI pipelines.</p>
-
-    <div class="role-box frame">
-      <span class="tick-bl"></span><span class="tick-br"></span>
-      <div class="role-title mono">role: applied ai &amp; full-stack engineer</div>
-      <div class="role-meta">confidence: 99.4% · class: builder / architect</div>
+  <div class="wrap hero-grid">
+    <div>
+      <h1 class="display">Full-stack &amp;<br>applied AI<br>engineer</h1>
+      <p class="hero-role">I build cross-platform products end to end — from SQL-backed APIs to React interfaces — and spend my own time exploring how LLM agents can automate real tasks.</p>
+      <div class="hero-links">
+        <a class="btn primary" href="#work">View work</a>
+        <a class="btn" href="https://github.com/rajazain12" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://linkedin.com/in/zain-tanveer-ai" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
     </div>
+    <div class="hero-diagram" aria-hidden="true">
+      <svg viewBox="0 0 240 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="var(--line)" stroke-width="1.5">
+          <line x1="120" y1="34" x2="120" y2="84"/>
+          <line x1="120" y1="114" x2="120" y2="164"/>
+          <line x1="120" y1="194" x2="120" y2="226"/>
+        </g>
+        <g>
+          <rect x="55" y="8" width="130" height="26" rx="3" fill="none" stroke="var(--ink-faint)"/>
+          <text x="120" y="25" text-anchor="middle" font-family="Inter" font-size="11" fill="var(--ink-soft)">React client</text>
 
-    <div class="hero-links">
-      <a class="btn primary" href="#work" id="view-work-btn">View Work</a>
-      <a class="btn" href="https://github.com/rajazain12" target="_blank" rel="noopener">GitHub</a>
-      <a class="btn" href="https://linkedin.com/in/zain-tanveer-ai" target="_blank" rel="noopener">LinkedIn</a>
+          <rect x="45" y="88" width="150" height="26" rx="3" fill="none" stroke="var(--accent)"/>
+          <text x="120" y="105" text-anchor="middle" font-family="Inter" font-size="11" fill="var(--accent)">FastAPI / Node service</text>
+
+          <rect x="35" y="168" width="80" height="26" rx="3" fill="none" stroke="var(--ink-faint)"/>
+          <text x="75" y="185" text-anchor="middle" font-family="Inter" font-size="11" fill="var(--ink-soft)">SQL Server</text>
+
+          <rect x="125" y="168" width="80" height="26" rx="3" fill="none" stroke="var(--warm)"/>
+          <text x="165" y="185" text-anchor="middle" font-family="Inter" font-size="11" fill="var(--warm)">Gemini API</text>
+
+          <rect x="55" y="228" width="130" height="26" rx="3" fill="none" stroke="var(--ink-faint)"/>
+          <text x="120" y="245" text-anchor="middle" font-family="Inter" font-size="11" fill="var(--ink-soft)">Voice / UI output</text>
+        </g>
+        <g stroke="var(--line)" stroke-width="1.5">
+          <line x1="120" y1="114" x2="75" y2="168"/>
+          <line x1="120" y1="114" x2="165" y2="168"/>
+        </g>
+      </svg>
     </div>
   </div>
 </section>
 
 <section id="about">
-  <div class="wrap about-grid reveal">
-    <div>
-      <div class="about-label">// about</div>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-kicker">About</div>
       <div class="section-title display">Summary</div>
     </div>
     <div class="about-body">
-      <p>I am a <strong>software engineer specializing in autonomous AI automation, natural language processing, and cross-platform full-stack development</strong>. With experience spanning production client platforms and complex agentic systems, I am comfortable owning the full software lifecycle — from designing secure SQL architectures and sandboxed LLM execution layers to deploying low-latency voice pipelines and intuitive React interfaces.</p>
-      <p>Proficient in architecting end-to-end applications using <strong>Python</strong>, <strong>FastAPI</strong>, <strong>React</strong>, <strong>React Native</strong>, <strong>TypeScript</strong>, and <strong>Google Gemini API</strong> with structured function-calling defenses.</p>
+      <p>I'm a <strong>software engineer specializing in cross-platform full-stack development and applied AI/NLP</strong>. My experience spans a freelance e-commerce platform, a mobile subtitling app, and self-directed projects exploring LLM-powered automation — from SQL-backed architecture to voice pipelines and React interfaces.</p>
+      <p>I work primarily in <strong>Python</strong>, <strong>FastAPI</strong>, <strong>React</strong>, <strong>React Native</strong>, and <strong>TypeScript</strong>, and I'm comfortable picking up new tools — most recently the <strong>Google Gemini API</strong> for multi-step function-calling.</p>
     </div>
   </div>
 </section>
 
 <section id="skills">
-  <div class="wrap reveal">
+  <div class="wrap">
     <div class="section-head">
-      <div>
-        <div class="section-num mono">// 01</div>
-        <div class="section-title display">Detected Skills</div>
-      </div>
+      <div class="section-kicker">Skills</div>
+      <div class="section-title display">What I work with</div>
     </div>
     <div class="skill-groups">
       <div class="skill-group">
@@ -258,19 +267,19 @@
           <span class="tag">FastAPI</span>
           <span class="tag">TypeScript</span>
           <span class="tag">Redux</span>
-          <span class="tag">Node.js/Express</span>
+          <span class="tag">Node.js / Express</span>
         </div>
       </div>
       <div class="skill-group">
-        <h3>AI &amp; Agentic Automation</h3>
+        <h3>AI &amp; Data Science</h3>
         <div class="tag-list">
-          <span class="tag">LLM API (Gemini)</span>
-          <span class="tag">Function-Calling</span>
           <span class="tag">NLP</span>
-          <span class="tag">Vector Databases</span>
-          <span class="tag">Prompt Defense</span>
-          <span class="tag">OpenAI Whisper</span>
+          <span class="tag">Computer Vision</span>
           <span class="tag">Machine Learning</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">OpenAI Whisper</span>
+          <span class="tag">Gemini API</span>
+          <span class="tag">Vector DBs</span>
         </div>
       </div>
       <div class="skill-group">
@@ -288,106 +297,50 @@
 </section>
 
 <section id="work">
-  <div class="wrap reveal">
+  <div class="wrap">
     <div class="section-head">
-      <div>
-        <div class="section-num mono">// 02</div>
-        <div class="section-title display">Freelance &amp; Selected Work</div>
-      </div>
+      <div class="section-kicker">Selected work</div>
+      <div class="section-title display">Freelance &amp; projects</div>
     </div>
 
-    <!-- The Luxury Lounge Project -->
-    <div class="project frame">
-      <span class="tick-bl"></span><span class="tick-br"></span>
+    <div class="project">
       <div class="project-top">
-        <div>
-          <div class="project-title display">The Luxury Lounge</div>
-          <div class="project-kind">Full-Stack E-Commerce Platform · Pre-Launch Client Project</div>
-        </div>
-        <div class="metric">500+ Daily Sessions</div>
+        <div class="project-title display">The Luxury Lounge</div>
+        <div class="status">Pre-launch · freelance</div>
       </div>
-      <ul>
-        <li>Engineered a full-stack e-commerce platform using React, Redux, Node.js, and SQL Server, supporting secure JWT authentication and role-based access control for 500+ daily sessions.</li>
-        <li>Built a comprehensive admin console enabling non-technical owners to independently manage products, categories, swatches, and homepage content with zero code intervention.</li>
-        <li>Integrated Cloudinary for direct-to-cloud media uploads, reducing server payload bandwidth by 40% and enabling highly scalable media management.</li>
-        <li>Architected an automated coupon generation and multi-category tagging system, supporting real-time inventory tracking and dynamic percentage-based discounts.</li>
-      </ul>
-      <div class="project-stack">
-        <span class="chip">React</span>
-        <span class="chip">Redux</span>
-        <span class="chip">Node.js</span>
-        <span class="chip">Express</span>
-        <span class="chip">SQL Server</span>
-        <span class="chip">TypeScript</span>
-        <span class="chip">Cloudinary</span>
-      </div>
-      <div style="margin-top: 18px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted);">
-        * Project is currently in pre-launch development for a private client.
-      </div>
+      <p class="project-desc">A full-stack e-commerce platform built for a private client, with secure JWT-based authentication and role-based access control.</p>
+      <p class="project-desc">Includes a comprehensive admin console so non-technical owners can manage products, categories, swatches, and homepage content without touching code, plus an automated coupon system with real-time inventory tracking and dynamic discounts. Media uploads run through Cloudinary for direct-to-cloud storage.</p>
+      <div class="project-meta">React · Redux · Node.js · Express · SQL Server · Cloudinary</div>
+      <p class="project-note">Built and fully tested; awaiting the client's public launch.</p>
     </div>
 
-    <!-- J.A.R.V.I.S. Autonomous AI Voice Assistant -->
-    <div class="project frame">
-      <span class="tick-bl"></span><span class="tick-br"></span>
+    <div class="project">
       <div class="project-top">
-        <div>
-          <div class="project-title display">J.A.R.V.I.S.</div>
-          <div class="project-kind">Autonomous AI Voice Assistant &amp; Desktop Automation Platform · Personal Project</div>
-        </div>
-        <div class="metric">15+ OS Actions</div>
+        <div class="project-title display">SubtitlePro</div>
+        <div class="status">Final year project</div>
       </div>
-      <ul>
-        <li>Architected a full-stack, voice-controlled AI assistant integrating Google's Gemini API for multi-step task planning and structured function-calling across 15+ system-level actions, from application control to file operations.</li>
-        <li>Engineered a security-hardened execution layer with sandboxed command validation, sensitive-file access controls, and prompt-injection defenses to safely bridge LLM-generated outputs with native OS automation.</li>
-        <li>Built a persistent memory system combining a semantic vector database with a low-latency, real-time voice pipeline (wake-word detection & streaming TTS) delivered through a custom React and TypeScript interface.</li>
-      </ul>
-      <div class="project-stack">
-        <span class="chip">Google Gemini API</span>
-        <span class="chip">Python</span>
-        <span class="chip">FastAPI</span>
-        <span class="chip">React</span>
-        <span class="chip">TypeScript</span>
-        <span class="chip">Vector DB</span>
-        <span class="chip">AI Automation</span>
-      </div>
-      <a class="btn" style="margin-top:22px;" href="https://github.com/rajazain12" target="_blank" rel="noopener">View Code ↗</a>
+      <p class="project-desc">An adaptive video subtitling mobile app with a real-time NLP profanity-filtering engine and an auto-pause mechanism to dynamically censor content.</p>
+      <p class="project-desc">The FastAPI and SQL Server backend keeps user configuration in sync with client state, and a dedicated Parent Control Center adds emoji-enhanced subtitles and vocabulary support for children.</p>
+      <div class="project-meta">React Native · Python · FastAPI · Redux · SQL Server · <a href="https://github.com/rajazain12/SubtitlePro" target="_blank" rel="noopener">View code ↗</a></div>
     </div>
 
-    <!-- SubtitlePro Project -->
-    <div class="project frame">
-      <span class="tick-bl"></span><span class="tick-br"></span>
+    <div class="project">
       <div class="project-top">
-        <div>
-          <div class="project-title display">SubtitlePro</div>
-          <div class="project-kind">Adaptive Video Subtitling System · Final Year Project</div>
-        </div>
-        <div class="metric">Real-time NLP filtering</div>
+        <div class="project-title display">J.A.R.V.I.S.</div>
+        <div class="status">Self-directed learning project</div>
       </div>
-      <ul>
-        <li>Architected a cross-platform mobile video player app featuring a real-time NLP profanity-filtering engine with an auto-pause mechanism to censor inappropriate content dynamically.</li>
-        <li>Developed a scalable backend using FastAPI and SQL Server to sync user configurations seamlessly with client state.</li>
-        <li>Designed a secure Parent Control Center with personalized UX features, including emoji-enhanced subtitles for children and vocabulary support.</li>
-      </ul>
-      <div class="project-stack">
-        <span class="chip">React Native</span>
-        <span class="chip">Python</span>
-        <span class="chip">FastAPI</span>
-        <span class="chip">Redux</span>
-        <span class="chip">SQL Server</span>
-        <span class="chip">NLP</span>
-      </div>
-      <a class="btn" style="margin-top:22px;" href="https://github.com/rajazain12/SubtitlePro" target="_blank" rel="noopener">View Code ↗</a>
+      <p class="project-desc">A voice-controlled desktop assistant I built to learn hands-on AI agent development, using the Google Gemini API for multi-step task planning and function-calling to automate everyday desktop actions like launching apps and managing files.</p>
+      <p class="project-desc">Along the way I explored patterns for bridging LLM output with OS-level automation safely — command validation and restricted access to sensitive files — and added a lightweight vector-based memory system with wake-word detection and text-to-speech, wrapped in a custom React and TypeScript interface.</p>
+      <div class="project-meta">Python · FastAPI · React · TypeScript · Google Gemini API</div>
     </div>
   </div>
 </section>
 
 <section id="education">
-  <div class="wrap reveal">
+  <div class="wrap">
     <div class="section-head">
-      <div>
-        <div class="section-num mono">// 03</div>
-        <div class="section-title display">Education</div>
-      </div>
+      <div class="section-kicker">Education</div>
+      <div class="section-title display">Background</div>
     </div>
     <div class="edu-row">
       <div>
@@ -400,73 +353,43 @@
 </section>
 
 <section id="certifications">
-  <div class="wrap reveal">
+  <div class="wrap">
     <div class="section-head">
-      <div>
-        <div class="section-num mono">// 04</div>
-        <div class="section-title display">Virtual Experience &amp; Certifications</div>
-      </div>
+      <div class="section-kicker">Certifications</div>
+      <div class="section-title display">Virtual experience</div>
     </div>
-
-    <div class="project frame">
-      <span class="tick-bl"></span><span class="tick-br"></span>
+    <div class="project">
       <div class="project-top">
-        <div>
-          <div class="project-title display">Skyscanner Front-End Software Engineering</div>
-          <div class="project-kind">Virtual Experience Programme · Forage</div>
-        </div>
-        <div class="metric">August 2026</div>
+        <div class="project-title display">Skyscanner — Front-End Software Engineering</div>
+        <div class="status">Forage · Aug 2026</div>
       </div>
-      <ul>
-        <li>Completed a front-end job simulation at Skyscanner, developing a responsive date-picker application utilizing React and the open-source Backpack design system.</li>
-        <li>Engineered customized UI components and implemented automated test suites to ensure proper DOM rendering and functionality.</li>
-      </ul>
-      <div class="project-stack">
-        <span class="chip">React</span>
-        <span class="chip">Backpack</span>
-        <span class="chip">Automated Testing</span>
-      </div>
+      <p class="project-desc">Completed a front-end job simulation building a responsive date-picker application with React and the open-source Backpack design system, including custom UI components and automated DOM-rendering test suites.</p>
+      <div class="project-meta">React · Backpack · Automated testing</div>
     </div>
   </div>
 </section>
 
 <section id="contact">
-  <div class="wrap contact reveal">
-    <div class="section-num mono">// 05</div>
-    <div class="section-title display">Let's build something.</div>
-    <p class="contact-sub">Open to full-stack, applied AI, and agentic automation roles. Reach out directly or connect on LinkedIn and GitHub.</p>
-    <div class="contact-links">
-      <a class="btn primary" href="mailto:zaintanveer1632@gmail.com">zaintanveer1632@gmail.com</a>
-      <a class="btn" href="tel:+923275061822">+92 327 5061822</a>
-      <a class="btn" href="https://github.com/rajazain12" target="_blank" rel="noopener">GitHub ↗</a>
-      <a class="btn" href="https://linkedin.com/in/zain-tanveer-ai" target="_blank" rel="noopener">LinkedIn ↗</a>
+  <div class="wrap contact">
+    <div class="contact-inner">
+      <div>
+        <div class="section-kicker">Contact</div>
+        <div class="section-title display">Let's build something.</div>
+        <p class="contact-sub">Open to full-stack and applied AI roles. Reach out directly or connect on LinkedIn.</p>
+      </div>
+      <div class="contact-links">
+        <a class="btn primary" href="mailto:zaintanveer1632@gmail.com">Email me</a>
+        <a class="btn" href="tel:+923275061822">Call</a>
+        <a class="btn" href="https://github.com/rajazain12" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="btn" href="https://linkedin.com/in/zain-tanveer-ai" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 ZAIN TANVEER — BUILT WITH REACT, FASTAPI &amp; AUTONOMOUS AI AGENTS</p>
+  <p>© 2026 Zain Tanveer</p>
 </footer>
-
-<script>
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.15 });
-  revealEls.forEach(el => io.observe(el));
-
-  const viewWorkBtn = document.getElementById('view-work-btn');
-  if (viewWorkBtn) {
-    viewWorkBtn.addEventListener('click', (e) => {
-      const target = document.getElementById('work');
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        history.pushState(null, '', '#work');
-      }
-    });
-  }
-</script>
 
 </body>
 </html>
