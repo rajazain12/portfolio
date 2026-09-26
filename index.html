@@ -86,34 +86,35 @@
   a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
 
   /* ---------- hero ---------- */
-  .hero{padding:88px 0 84px;}
-  .hero-grid{display:grid; grid-template-columns:1.15fr 0.85fr; gap:48px; align-items:center;}
+  .hero{padding:120px 0 100px;}
+  .hero-inner{max-width:680px;}
+  .hero-kicker{display:flex; align-items:center; gap:10px; font-size:14px; color:var(--ink-faint); margin-bottom:22px;}
+  .hero-kicker .rule{width:32px; height:1px; background:var(--line);}
   .hero h1{
-    font-size:clamp(40px, 6.4vw, 64px);
-    line-height:1.02;
+    font-size:clamp(42px, 6.8vw, 68px);
+    line-height:1.04;
     font-weight:600;
     letter-spacing:-0.01em;
   }
-  .hero-role{margin-top:14px; font-size:17px; color:var(--ink-soft); max-width:46ch;}
-  .hero-links{display:flex; gap:10px; margin-top:34px; flex-wrap:wrap;}
+  .hero h1 em{font-style:italic; color:var(--accent); font-weight:500;}
+  .hero-role{margin-top:22px; font-size:18px; line-height:1.65; color:var(--ink-soft); max-width:52ch;}
+  .hero-links{display:flex; gap:10px; margin-top:38px; flex-wrap:wrap;}
   .btn{
     font-size:14px; font-weight:500;
-    padding:11px 20px; border:1px solid var(--line); border-radius:3px;
-    transition:border-color .2s ease, background .2s ease, color .2s ease;
+    padding:12px 22px; border:1px solid var(--line); border-radius:4px;
+    transition:border-color .2s ease, background .2s ease, color .2s ease, transform .15s ease;
     display:inline-flex; align-items:center; gap:6px;
   }
-  .btn:hover{border-color:var(--accent); color:var(--accent);}
+  .btn:hover{border-color:var(--accent); color:var(--accent); transform:translateY(-1px);}
   .btn.primary{background:var(--ink); color:var(--paper); border-color:var(--ink);}
   .btn.primary:hover{background:var(--accent); border-color:var(--accent); color:var(--accent-ink);}
-
-  .hero-diagram{display:flex; justify-content:center;}
-  .hero-diagram svg{width:100%; max-width:300px; height:auto;}
 
   /* ---------- section shell ---------- */
   section{padding:76px 0; border-top:1px solid var(--line-soft);}
   .section-head{margin-bottom:40px;}
   .section-title{font-size:clamp(24px,3vw,30px); font-weight:600;}
-  .section-kicker{font-size:13px; color:var(--ink-faint); margin-bottom:6px;}
+  .section-kicker{display:flex; align-items:center; gap:10px; font-size:13px; color:var(--ink-faint); margin-bottom:8px;}
+  .section-kicker .rule{width:20px; height:1px; background:var(--line);}
 
   /* ---------- about ---------- */
   .about-body{max-width:66ch;}
@@ -134,13 +135,14 @@
   .tag:hover{border-color:var(--accent); color:var(--accent);}
 
   /* ---------- projects ---------- */
-  .project{padding:32px 0; border-top:1px solid var(--line-soft);}
+  .project{padding:34px 0; border-top:1px solid var(--line-soft); transition:padding-left .25s ease; border-left:2px solid transparent; padding-left:0;}
+  .project:hover{border-left-color:var(--accent); padding-left:16px;}
   .project:first-child{border-top:none; padding-top:0;}
   .project-top{display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap; margin-bottom:6px;}
   .project-title{font-family:'Fraunces', serif; font-size:22px; font-weight:600;}
   .status{
-    font-size:12px; color:var(--warm); border:1px solid currentColor; border-radius:3px;
-    padding:4px 9px; white-space:nowrap;
+    font-size:11.5px; font-weight:500; color:var(--warm); border:1px solid currentColor; border-radius:20px;
+    padding:5px 12px; white-space:nowrap;
   }
   .project-desc{color:var(--ink-soft); font-size:15.5px; max-width:70ch; margin-top:10px;}
   .project-desc + .project-desc{margin-top:8px;}
@@ -166,8 +168,6 @@
   footer p{font-size:12.5px; color:var(--ink-faint);}
 
   @media (max-width: 760px){
-    .hero-grid{grid-template-columns:1fr;}
-    .hero-diagram{order:-1; max-width:220px; margin:0 auto;}
     .skill-groups{grid-template-columns:1fr; gap:26px;}
     .navlinks{display:none;}
     .contact-inner{flex-direction:column; align-items:flex-start;}
@@ -196,44 +196,14 @@
 </header>
 
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <h1 class="display">Full-stack &amp;<br>applied AI<br>engineer</h1>
-      <p class="hero-role">I build cross-platform products end to end — from SQL-backed APIs to React interfaces — and spend my own time exploring how LLM agents can automate real tasks.</p>
-      <div class="hero-links">
-        <a class="btn primary" href="#work">View work</a>
-        <a class="btn" href="https://github.com/rajazain12" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn" href="https://linkedin.com/in/zain-tanveer-ai" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-    </div>
-    <div class="hero-diagram" aria-hidden="true">
-      <svg viewBox="0 0 240 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g stroke="var(--line)" stroke-width="1.5">
-          <line x1="120" y1="34" x2="120" y2="84"/>
-          <line x1="120" y1="114" x2="120" y2="164"/>
-          <line x1="120" y1="194" x2="120" y2="226"/>
-        </g>
-        <g>
-          <rect x="55" y="8" width="130" height="26" rx="3" fill="none" stroke="var(--ink-faint)"/>
-          <text x="120" y="25" text-anchor="middle" font-family="Inter" font-size="11" fill="var(--ink-soft)">React client</text>
-
-          <rect x="45" y="88" width="150" height="26" rx="3" fill="none" stroke="var(--accent)"/>
-          <text x="120" y="105" text-anchor="middle" font-family="Inter" font-size="11" fill="var(--accent)">FastAPI / Node service</text>
-
-          <rect x="35" y="168" width="80" height="26" rx="3" fill="none" stroke="var(--ink-faint)"/>
-          <text x="75" y="185" text-anchor="middle" font-family="Inter" font-size="11" fill="var(--ink-soft)">SQL Server</text>
-
-          <rect x="125" y="168" width="80" height="26" rx="3" fill="none" stroke="var(--warm)"/>
-          <text x="165" y="185" text-anchor="middle" font-family="Inter" font-size="11" fill="var(--warm)">Gemini API</text>
-
-          <rect x="55" y="228" width="130" height="26" rx="3" fill="none" stroke="var(--ink-faint)"/>
-          <text x="120" y="245" text-anchor="middle" font-family="Inter" font-size="11" fill="var(--ink-soft)">Voice / UI output</text>
-        </g>
-        <g stroke="var(--line)" stroke-width="1.5">
-          <line x1="120" y1="114" x2="75" y2="168"/>
-          <line x1="120" y1="114" x2="165" y2="168"/>
-        </g>
-      </svg>
+  <div class="wrap hero-inner">
+    <div class="hero-kicker"><span class="rule"></span> Rawalpindi, Pakistan</div>
+    <h1 class="display">Full-stack &amp; <em>applied&nbsp;AI</em> engineer</h1>
+    <p class="hero-role">I build cross-platform products end to end — from SQL-backed APIs to React interfaces — and spend my own time exploring how LLM agents can automate real tasks.</p>
+    <div class="hero-links">
+      <a class="btn primary" href="#work">View work</a>
+      <a class="btn" href="https://github.com/rajazain12" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://linkedin.com/in/zain-tanveer-ai" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </div>
 </section>
@@ -241,7 +211,7 @@
 <section id="about">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-kicker">About</div>
+      <div class="section-kicker"><span class="rule"></span>About</div>
       <div class="section-title display">Summary</div>
     </div>
     <div class="about-body">
@@ -254,7 +224,7 @@
 <section id="skills">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-kicker">Skills</div>
+      <div class="section-kicker"><span class="rule"></span>Skills</div>
       <div class="section-title display">What I work with</div>
     </div>
     <div class="skill-groups">
@@ -299,7 +269,7 @@
 <section id="work">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-kicker">Selected work</div>
+      <div class="section-kicker"><span class="rule"></span>Selected work</div>
       <div class="section-title display">Freelance &amp; projects</div>
     </div>
 
@@ -339,7 +309,7 @@
 <section id="education">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-kicker">Education</div>
+      <div class="section-kicker"><span class="rule"></span>Education</div>
       <div class="section-title display">Background</div>
     </div>
     <div class="edu-row">
@@ -355,7 +325,7 @@
 <section id="certifications">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-kicker">Certifications</div>
+      <div class="section-kicker"><span class="rule"></span>Certifications</div>
       <div class="section-title display">Virtual experience</div>
     </div>
     <div class="project">
@@ -373,7 +343,7 @@
   <div class="wrap contact">
     <div class="contact-inner">
       <div>
-        <div class="section-kicker">Contact</div>
+        <div class="section-kicker"><span class="rule"></span>Contact</div>
         <div class="section-title display">Let's build something.</div>
         <p class="contact-sub">Open to full-stack and applied AI roles. Reach out directly or connect on LinkedIn.</p>
       </div>
